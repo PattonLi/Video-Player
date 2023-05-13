@@ -18,7 +18,7 @@
 }
 
 #pauseButton{
-    -fx-background-image:url("../icons/pause.png");
+    -fx-background-image:url("../icons/pause-button.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -32,14 +32,29 @@
 }
 
 #slowButton{
-    -fx-background-image:url("../icons/rewind-btn.png");
+    -fx-background-image:url("../icons/play-slower.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
 
 #fastButton{
-    -fx-background-image:url("../icons/forward.png");
+    -fx-background-image:url("../icons/play-faster.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+
+}
+
+#preButton{
+    -fx-background-image:url("../icons/play-back.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#nextButton{
+    -fx-background-image:url("../icons/play-forward.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -56,3 +71,4 @@
     -fx-background-image: url("../images/index-page.jpeg");
     -fx-background-size: 800,600;
 }
+

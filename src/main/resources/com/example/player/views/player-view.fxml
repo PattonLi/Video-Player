@@ -61,7 +61,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-                  <Button mnemonicParsing="false" text="Button" />
+                  <Button fx:id="preButton" mnemonicParsing="false" onAction="#preVideo" text="Button" />
             <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slowVideo" prefHeight="20.0" prefWidth="30.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
@@ -78,7 +78,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-                  <Button mnemonicParsing="false" text="Button" />
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextVideo" text="Button" />
             <Slider fx:id="slider">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />

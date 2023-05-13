@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.example.player.util.PlayList;
 import com.example.player.util.Player;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -25,7 +26,7 @@ import javafx.util.Duration;
 
 
 public class MainController implements Initializable {
-
+    private PlayList playList;
     private MediaPlayer mediaPlayer;
 
     @FXML
@@ -97,6 +98,7 @@ public class MainController implements Initializable {
     private void StopVideo(ActionEvent event) {
         Player.stopPlay();
     }
+
     //调整速率
     @FXML
     private void fastVideo(ActionEvent event) {
@@ -107,8 +109,11 @@ public class MainController implements Initializable {
         Player.slowPlay();
     }
 
-
-
+    //切换影片
+    @FXML
+    private void preVideo(ActionEvent event){Player.prePlay();}
+    @FXML
+    private void nextVideo(ActionEvent event){Player.nextPlay();}
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
