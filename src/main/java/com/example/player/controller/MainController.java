@@ -1,8 +1,10 @@
-package com.example.player;
+package com.example.player.controller;
 
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.example.player.util.Player;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
@@ -13,8 +15,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -24,7 +24,7 @@ import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
 
-public class HelloController implements Initializable {
+public class MainController implements Initializable {
 
     private MediaPlayer mediaPlayer;
 
@@ -37,7 +37,8 @@ public class HelloController implements Initializable {
 
     private String filepath;
     @SuppressWarnings("FieldMayBeFinal")
-    private  Double playbackRate = 1.0;
+    private Double playbackRate = 1.0;
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -46,8 +47,7 @@ public class HelloController implements Initializable {
 
         File file = fileChooser.showOpenDialog(null);
         filepath = file.toURI().toString();
-        if (filepath != null)
-        {
+        if (filepath != null) {
             Media media = new Media(filepath);
             mediaPlayer = new MediaPlayer(media);
             mediaView.setMediaPlayer(mediaPlayer);
@@ -57,18 +57,18 @@ public class HelloController implements Initializable {
             width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
             height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
 
-            slider.setValue(mediaPlayer.getVolume()*100);
-            slider.valueProperty().addListener(new InvalidationListener(){
+            slider.setValue(mediaPlayer.getVolume() * 100);
+            slider.valueProperty().addListener(new InvalidationListener() {
                 @Override
                 public void invalidated(Observable observable) {
-                    mediaPlayer.setVolume(slider.getValue()/100);
+                    mediaPlayer.setVolume(slider.getValue() / 100);
                 }
             });
 
             mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
                 @Override
                 public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
-                    seekSlider.setValue(newValue.toSeconds()/mediaPlayer.getTotalDuration().toSeconds()*100);
+                    seekSlider.setValue(newValue.toSeconds() / mediaPlayer.getTotalDuration().toSeconds() * 100);
 
                 }
             });
@@ -76,56 +76,37 @@ public class HelloController implements Initializable {
             seekSlider.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    mediaPlayer.seek(Duration.seconds(seekSlider.getValue()*mediaPlayer.getTotalDuration().toSeconds()/100));
+                    mediaPlayer.seek(Duration.seconds(seekSlider.getValue() * mediaPlayer.getTotalDuration().toSeconds() / 100));
                 }
             });
             mediaPlayer.play();
         }
     }
 
+
+    //播放、暂停、停止
     @FXML
-    private void playVideo(ActionEvent event)
-    {
-        playbackRate = 1.0;
-        setRate();
-        mediaPlayer.play();
+    private void playVideo(ActionEvent event) {
+        Player.startPlay();
+    }
+    @FXML
+    private void pauseVideo(ActionEvent event) {
+        Player.pausePlay();
+    }
+    @FXML
+    private void StopVideo(ActionEvent event) {
+        Player.stopPlay();
+    }
+    //调整速率
+    @FXML
+    private void fastVideo(ActionEvent event) {
+        Player.fastPlay();
+    }
+    @FXML
+    private void slowVideo(ActionEvent event) {
+        Player.slowPlay();
     }
 
-    @FXML
-    private void pauseVideo(ActionEvent event)
-    {
-        mediaPlayer.pause();
-    }
-
-    @FXML
-    private void StopVideo(ActionEvent event)
-    {
-        mediaPlayer.stop();
-    }
-
-    @FXML
-    private void fastVideo(ActionEvent event)
-    {
-        playbackRate += 0.5;
-        if(playbackRate > 4.0)
-        {
-            playbackRate = 4.0;
-        }
-        setRate();
-    }
-
-
-    @FXML
-    private void slowVideo(ActionEvent event)
-    {
-        // mediaPlayer.setRate(0.75);
-        playbackRate -= 0.25;
-        if(playbackRate<0.25)
-        {
-            playbackRate = 0.25;
-        }
-        setRate();
-    }
 
 
 
@@ -134,18 +115,13 @@ public class HelloController implements Initializable {
         // TODO
     }
 
-    private void setRate() {
-        mediaPlayer.setRate(playbackRate);
-    }
-
+    //帮助菜单栏
     @FXML
-    private void showInfo()
-    {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Developer Info");
-        alert.setHeaderText(null);
-        alert.setContentText("Developed By\n\tGeorge Simclair Sam,\n\t\tElite Coders.\n\tsimclair.sgs@gmail.com");
-        alert.showAndWait();
+    private void showInfo(ActionEvent event) {
+        HelpController.showInfo();
     }
-
+    @FXML
+    private void showAbout(ActionEvent event) {
+        HelpController.showAbout();
+    }
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class ElitePlayerApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ElitePlayerApplication.class.getResource("player-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ElitePlayerApplication.class.getResource("views/player-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Elite video player");
         stage.setScene(scene);

@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000;" stylesheets="@styles/button_style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000;" stylesheets="@../styles/main_style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.controller.MainController">
   <bottom>
     <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #7f9394;" BorderPane.alignment="CENTER">
       <children>
@@ -84,14 +84,6 @@
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
             </Slider>
-            <Button fx:id="infoButton" alignment="CENTER" layoutX="380.0" layoutY="16.0" mnemonicParsing="false" onAction="#showInfo" prefHeight="15.0" prefWidth="15.0">
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-              <HBox.margin>
-                <Insets left="20.0" />
-              </HBox.margin>
-            </Button>
           </children>
           <VBox.margin>
             <Insets bottom="5.0" top="5.0" />
@@ -101,6 +93,14 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Button fx:id="infoButton" alignment="CENTER" mnemonicParsing="false" onAction="#showInfo" prefHeight="15.0" prefWidth="15.0">
+              <padding>
+                <Insets left="2.0" right="2.0" />
+              </padding>
+              <HBox.margin>
+                <Insets left="20.0" />
+              </HBox.margin>
+            </Button>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </HBox>
@@ -142,9 +142,9 @@
             </Menu>
           <Menu mnemonicParsing="false" text="帮助">
             <items>
-              <MenuItem mnemonicParsing="false" text="主页" />
+              <MenuItem mnemonicParsing="false" onAction="#showInfo" text="关于" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="关于" />
+                  <MenuItem mnemonicParsing="false" onAction="#showAbout" text="主页" />
             </items>
           </Menu>
         </menus>
