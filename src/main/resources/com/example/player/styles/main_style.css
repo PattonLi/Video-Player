@@ -7,42 +7,42 @@
     -fx-background-image:url("../icons/open-file.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #playButton{
     -fx-background-image:url("../icons/play-button.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #pauseButton{
     -fx-background-image:url("../icons/pause-button.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #stopButton{
     -fx-background-image:url("../icons/stop-button.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #slowButton{
     -fx-background-image:url("../icons/play-slower.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #fastButton{
     -fx-background-image:url("../icons/play-faster.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 
 }
 
@@ -50,21 +50,14 @@
     -fx-background-image:url("../icons/play-back.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #nextButton{
     -fx-background-image:url("../icons/play-forward.png");
     -fx-background-size: 20 20;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
-#infoButton{ 
-    -fx-background-image:url("../icons/info.png");
-    -fx-background-size: 15 15;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: center-left;
 }
 
 #indexImage{

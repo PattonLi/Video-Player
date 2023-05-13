@@ -25,10 +25,10 @@
   <bottom>
     <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #7f9394;" BorderPane.alignment="CENTER">
       <children>
-        <Slider fx:id="seekSlider" prefWidth="20.0" style="-fx-color: #FA6800;" />
+        <Slider fx:id="progSlider" prefWidth="20.0" style="-fx-color: #FA6800;" />
         <HBox alignment="CENTER" prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #7f9394;">
           <children>
-            <Button fx:id="openButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="20.0" prefWidth="20.0">
+            <Button fx:id="openButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openVideo" prefHeight="20.0" prefWidth="20.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
@@ -45,7 +45,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-            <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="20.0" prefWidth="30.0">
+            <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="19.0" prefWidth="24.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
@@ -53,7 +53,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-            <Button fx:id="stopButton" mnemonicParsing="false" onAction="#StopVideo" prefHeight="20.0" prefWidth="30.0">
+            <Button fx:id="stopButton" mnemonicParsing="false" onAction="#StopVideo" prefHeight="20.0" prefWidth="24.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
@@ -61,7 +61,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-                  <Button fx:id="preButton" mnemonicParsing="false" onAction="#preVideo" text="Button" />
+                  <Button fx:id="preButton" mnemonicParsing="false" onAction="#preVideo" prefHeight="68.0" prefWidth="38.0" />
             <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slowVideo" prefHeight="20.0" prefWidth="30.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
@@ -78,8 +78,8 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
-                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextVideo" text="Button" />
-            <Slider fx:id="slider">
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextVideo" prefHeight="26.0" prefWidth="30.0" />
+            <Slider fx:id="volSlider">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
@@ -93,14 +93,6 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Button fx:id="infoButton" alignment="CENTER" mnemonicParsing="false" onAction="#showInfo" prefHeight="15.0" prefWidth="15.0">
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-              <HBox.margin>
-                <Insets left="20.0" />
-              </HBox.margin>
-            </Button>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </HBox>
@@ -132,12 +124,12 @@
           </Menu>
             <Menu mnemonicParsing="false" text="播放">
               <items>
-                <MenuItem mnemonicParsing="false" text="播放" />
-                  <MenuItem mnemonicParsing="false" text="暂停" />
-                  <MenuItem mnemonicParsing="false" text="减速" />
-                  <MenuItem mnemonicParsing="false" text="加速" />
-                  <MenuItem mnemonicParsing="false" text="上一个" />
-                  <MenuItem mnemonicParsing="false" text="下一个" />
+                <MenuItem mnemonicParsing="false" onAction="#playVideo" text="播放" />
+                  <MenuItem mnemonicParsing="false" onAction="#pauseVideo" text="暂停" />
+                  <MenuItem mnemonicParsing="false" onAction="#slowVideo" text="减速" />
+                  <MenuItem mnemonicParsing="false" onAction="#fastVideo" text="加速" />
+                  <MenuItem mnemonicParsing="false" onAction="#preVideo" text="上一个" />
+                  <MenuItem mnemonicParsing="false" onAction="#nextVideo" text="下一个" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="帮助">
@@ -161,8 +153,7 @@
    <center>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-        <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0">
+            <Pane disable="true" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Text fill="#e4d5d5" layoutX="212.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome to the elite palyer" textAlignment="CENTER" wrappingWidth="616.853515625">
                      <font>
@@ -172,6 +163,7 @@
                   <Label fx:id="indexImage" layoutX="64.0" layoutY="123.0" prefHeight="500.0" prefWidth="913.0" />
                </children>
             </Pane>
+        <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
          </children>
       </StackPane>
    </center>

@@ -6,6 +6,8 @@ import javafx.scene.control.Alert;
  * 操作 mediaPlayer
  */
 public class Player {
+
+    private PlayList playList;
     //播放器组件
     private static MediaPlayer mediaPlayer;
     //播放速率
@@ -13,6 +15,10 @@ public class Player {
 
     public static MediaPlayer getMediaPlayer() {
         return mediaPlayer;
+    }
+
+    public static void setMediaPlayer(MediaPlayer mediaPlayer) {
+        Player.mediaPlayer = mediaPlayer;
     }
 
     private static void setRate() {
