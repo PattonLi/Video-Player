@@ -30,19 +30,14 @@ public class HelloController implements Initializable {
 
     @FXML
     private MediaView mediaView;
-
-
     @FXML
     private Slider slider;
-
     @FXML
     private Slider seekSlider;
 
     private String filepath;
-
     @SuppressWarnings("FieldMayBeFinal")
     private  Double playbackRate = 1.0;
-
     @FXML
     private void handleButtonAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();

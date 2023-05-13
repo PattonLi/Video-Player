@@ -2,19 +2,31 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000;" stylesheets="@styles/button_style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.HelloController">
   <bottom>
     <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #7f9394;" BorderPane.alignment="CENTER">
       <children>
         <Slider fx:id="seekSlider" prefWidth="20.0" style="-fx-color: #FA6800;" />
-        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #7f9394;">
+        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #7f9394;">
           <children>
             <Button fx:id="openButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="20.0" prefWidth="20.0">
               <HBox.margin>
@@ -49,6 +61,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
+                  <Button mnemonicParsing="false" text="Button" />
             <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slowVideo" prefHeight="20.0" prefWidth="30.0">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
@@ -65,6 +78,7 @@
                 <Insets left="2.0" right="2.0" />
               </padding>
             </Button>
+                  <Button mnemonicParsing="false" text="Button" />
             <Slider fx:id="slider">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
@@ -83,6 +97,13 @@
             <Insets bottom="5.0" top="5.0" />
           </VBox.margin>
         </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </HBox>
       </children>
       <BorderPane.margin>
         <Insets top="30.0" />
@@ -92,11 +113,66 @@
       </padding>
     </VBox>
   </bottom>
-  <top>
-    <StackPane maxWidth="1.7976931348623157E308" minHeight="350.0" minWidth="250.0" prefHeight="342.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-      <children>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="文件">
+            <items>
+              <MenuItem mnemonicParsing="false" text="打开文件" />
+                  <MenuItem mnemonicParsing="false" text="打开文件夹" />
+                  <MenuItem mnemonicParsing="false" text="清除播放列表" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="查看">
+               <items>
+                  <RadioMenuItem mnemonicParsing="false" text="播放列表" />
+                  <RadioMenuItem mnemonicParsing="false" text="进度信息" />
+                  <RadioMenuItem mnemonicParsing="false" text="进度条" />
+               </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="播放">
+              <items>
+                <MenuItem mnemonicParsing="false" text="播放" />
+                  <MenuItem mnemonicParsing="false" text="暂停" />
+                  <MenuItem mnemonicParsing="false" text="减速" />
+                  <MenuItem mnemonicParsing="false" text="加速" />
+                  <MenuItem mnemonicParsing="false" text="上一个" />
+                  <MenuItem mnemonicParsing="false" text="下一个" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem mnemonicParsing="false" text="主页" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="关于" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView prefHeight="695.0" prefWidth="436.0" />
+            <ToggleButton mnemonicParsing="false" text="ToggleButton" />
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
         <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
-      </children>
-    </StackPane>
-  </top>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#e4d5d5" layoutX="212.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome to the elite palyer" textAlignment="CENTER" wrappingWidth="616.853515625">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="indexImage" layoutX="64.0" layoutY="123.0" prefHeight="500.0" prefWidth="913.0" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </center>
 </BorderPane>
