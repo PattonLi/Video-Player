@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaView;
 
 
@@ -18,10 +19,25 @@ public class MainController implements Initializable {
     private Slider volSlider;
     @FXML
     private Slider progSlider;
+    @FXML
+    private Pane mediaLayout;
 
+    //文件打开，关闭
     @FXML
     private void openVideo(ActionEvent event) {
-        FileController.openFile(mediaView);
+        FileController.openFile();
+        System.out.println("open success");
+    }
+
+    @FXML
+    private void openFolder(ActionEvent event) {
+        FileController.openFolder();
+        System.out.println("open success");
+    }
+
+    @FXML
+    private void clearPlaylist(ActionEvent event) {
+        FileController.openFile();
         System.out.println("open success");
     }
 
@@ -32,6 +48,10 @@ public class MainController implements Initializable {
         System.out.println("Volume initialize");
         ProgSlider.setProgSlider(progSlider);
         System.out.println("progSlider initialize");
+        FileController.setMediaView(mediaView);
+        System.out.println("mediaView initialize");
+        MediaLayout.setPane(mediaLayout);
+        System.out.println("mediaLayout initialize");
     }
 
     //播放、暂停、停止

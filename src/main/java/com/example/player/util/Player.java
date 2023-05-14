@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 public class Player {
 
     private PlayList playList;
+
     //播放器组件
     private static MediaPlayer mediaPlayer;
     //播放速率

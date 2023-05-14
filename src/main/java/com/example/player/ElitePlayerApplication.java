@@ -14,6 +14,7 @@ public class ElitePlayerApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Elite video player");
         stage.setScene(scene);
+        stage.setResizable(false); // 设置为不可调整大小
         stage.show();
     }
 

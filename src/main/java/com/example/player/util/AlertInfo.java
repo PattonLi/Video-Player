@@ -6,7 +6,7 @@ public class AlertInfo {
     public static void showAlert(String msg){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("注意");
-        alert.setHeaderText("head");
+        alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
     }

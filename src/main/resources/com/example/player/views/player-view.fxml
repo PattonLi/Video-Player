@@ -11,7 +11,6 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -21,65 +20,60 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000;" stylesheets="@../styles/main_style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.controller.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000;" stylesheets="@../styles/main_style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player.controller.MainController">
   <bottom>
-    <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: #7f9394;" BorderPane.alignment="CENTER">
+    <VBox alignment="CENTER" prefHeight="132.0" prefWidth="1280.0" style="-fx-background-color: #7f9394;" BorderPane.alignment="CENTER">
       <children>
-        <Slider fx:id="progSlider" prefWidth="20.0" style="-fx-color: #FA6800;" />
-        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #7f9394;">
+        <Slider fx:id="progSlider" minHeight="-Infinity" prefHeight="37.0" prefWidth="1280.0" style="-fx-color: #FA6800;" VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="1280.0" style="-fx-background-color: #7f9394;" VBox.vgrow="ALWAYS">
           <children>
-            <Button fx:id="openButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openVideo" prefHeight="20.0" prefWidth="20.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-
-            </Button>
-            <Button fx:id="playButton" mnemonicParsing="false" onAction="#playVideo" prefHeight="20.0" prefWidth="30.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-            </Button>
-            <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="19.0" prefWidth="24.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-            </Button>
-            <Button fx:id="stopButton" mnemonicParsing="false" onAction="#StopVideo" prefHeight="20.0" prefWidth="24.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-            </Button>
-                  <Button fx:id="preButton" mnemonicParsing="false" onAction="#preVideo" prefHeight="68.0" prefWidth="38.0" />
-            <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slowVideo" prefHeight="20.0" prefWidth="30.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-            </Button>
-            <Button fx:id="fastButton" mnemonicParsing="false" onAction="#fastVideo" prefHeight="20.0" prefWidth="30.0">
-              <HBox.margin>
-                <Insets left="5.0" right="5.0" />
-              </HBox.margin>
-              <padding>
-                <Insets left="2.0" right="2.0" />
-              </padding>
-            </Button>
-                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextVideo" prefHeight="26.0" prefWidth="30.0" />
-            <Slider fx:id="volSlider">
+                  <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="1058.0" HBox.hgrow="ALWAYS">
+                     <children>
+                  <Button fx:id="playButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#playVideo" prefHeight="20.0" prefWidth="20.0" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                      <Insets left="5.0" right="5.0" />
+                    </HBox.margin>
+                    <padding>
+                      <Insets left="2.0" right="2.0" />
+                    </padding>
+                  </Button>
+                  <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="20.0" prefWidth="20.0">
+                    <HBox.margin>
+                      <Insets left="5.0" right="5.0" />
+                    </HBox.margin>
+                    <padding>
+                      <Insets left="2.0" right="2.0" />
+                    </padding>
+                  </Button>
+                  <Button fx:id="stopButton" mnemonicParsing="false" onAction="#StopVideo" prefHeight="20.0" prefWidth="20.0">
+                    <HBox.margin>
+                      <Insets left="5.0" right="5.0" />
+                    </HBox.margin>
+                    <padding>
+                      <Insets left="2.0" right="2.0" />
+                    </padding>
+                  </Button>
+                        <Button fx:id="preButton" mnemonicParsing="false" onAction="#preVideo" prefHeight="20.0" prefWidth="20.0" />
+                  <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slowVideo" prefHeight="20.0" prefWidth="20.0">
+                    <HBox.margin>
+                      <Insets left="5.0" right="5.0" />
+                    </HBox.margin>
+                    <padding>
+                      <Insets left="2.0" right="2.0" />
+                    </padding>
+                  </Button>
+                  <Button fx:id="fastButton" mnemonicParsing="false" onAction="#fastVideo" prefHeight="20.0" prefWidth="20.0">
+                    <HBox.margin>
+                      <Insets left="5.0" right="5.0" />
+                    </HBox.margin>
+                    <padding>
+                      <Insets left="2.0" right="2.0" />
+                    </padding>
+                  </Button>
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextVideo" prefHeight="20.0" prefWidth="20.0" />
+                     </children>
+                  </HBox>
+            <Slider fx:id="volSlider" prefHeight="39.0" prefWidth="198.0" HBox.hgrow="NEVER">
               <HBox.margin>
                 <Insets left="5.0" right="5.0" />
               </HBox.margin>
@@ -89,11 +83,22 @@
             <Insets bottom="5.0" top="5.0" />
           </VBox.margin>
         </HBox>
-            <Separator prefWidth="200.0" />
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <Separator minHeight="-Infinity" prefHeight="15.0" />
+            <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Label prefHeight="27.0" prefWidth="633.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="27.0" prefWidth="733.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
       </children>
@@ -106,13 +111,13 @@
     </VBox>
   </bottom>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar prefHeight="34.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="文件">
             <items>
-              <MenuItem mnemonicParsing="false" text="打开文件" />
-                  <MenuItem mnemonicParsing="false" text="打开文件夹" />
-                  <MenuItem mnemonicParsing="false" text="清除播放列表" />
+              <MenuItem mnemonicParsing="false" onAction="#openVideo" text="打开文件" />
+                  <MenuItem mnemonicParsing="false" onAction="#openFolder" text="打开文件夹" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearPlaylist" text="清除播放列表" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="查看">
@@ -143,27 +148,30 @@
       </MenuBar>
    </top>
    <left>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="637.0" prefWidth="162.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <ListView prefHeight="695.0" prefWidth="436.0" />
-            <ToggleButton mnemonicParsing="false" text="ToggleButton" />
+            <ListView minHeight="-Infinity" prefHeight="730.0" prefWidth="162.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </left>
    <center>
-      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="705.0" prefWidth="1238.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane disable="true" prefHeight="200.0" prefWidth="200.0">
+            <Pane prefHeight="591.0" prefWidth="916.0" StackPane.alignment="CENTER">
                <children>
-                  <Text fill="#e4d5d5" layoutX="212.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome to the elite palyer" textAlignment="CENTER" wrappingWidth="616.853515625">
-                     <font>
-                        <Font size="44.0" />
-                     </font>
-                  </Text>
-                  <Label fx:id="indexImage" layoutX="64.0" layoutY="123.0" prefHeight="500.0" prefWidth="913.0" />
+                  <Pane fx:id="mediaLayout" layoutX="50.0" layoutY="31.0" prefHeight="665.0" prefWidth="1131.0">
+                     <children>
+                        <Text fill="#e4d5d5" layoutX="293.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome to the elite palyer" textAlignment="CENTER" wrappingWidth="616.853515625">
+                           <font>
+                              <Font size="44.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="indexImage" layoutX="224.0" layoutY="173.0" prefHeight="454.0" prefWidth="769.0" />
+                    <MediaView fx:id="mediaView" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
-        <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
          </children>
       </StackPane>
    </center>
