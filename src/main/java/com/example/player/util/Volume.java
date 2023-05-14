@@ -11,7 +11,7 @@ public class Volume {
         Volume.volSlider = volSlider;
     }
 
-    public void bindVolume(){
+    public static void bindVolume(){
         //绑定音量条
         volSlider.setValue(Player.getMediaPlayer().getVolume() * 100);
         volSlider.valueProperty().addListener(new InvalidationListener() {

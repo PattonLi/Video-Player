@@ -86,7 +86,7 @@
             <Separator minHeight="-Infinity" prefHeight="15.0" />
             <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
                <children>
-                  <Label prefHeight="27.0" prefWidth="633.0" text="Label">
+                  <Label fx:id="playStatus" prefHeight="27.0" prefWidth="633.0" text="未播放">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -94,7 +94,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="27.0" prefWidth="733.0" text="Label">
+                  <Label fx:id="progStatus" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="27.0" prefWidth="733.0" text="Label">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -150,7 +150,16 @@
    <left>
       <HBox prefHeight="637.0" prefWidth="162.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <ListView minHeight="-Infinity" prefHeight="730.0" prefWidth="162.0" HBox.hgrow="ALWAYS" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fill="#ffe6e6" strokeType="OUTSIDE" strokeWidth="0.0" text="播放列表" textAlignment="CENTER" wrappingWidth="98.64022445678711" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="list" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="150.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
          </children>
       </HBox>
    </left>

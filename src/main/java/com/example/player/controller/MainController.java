@@ -7,6 +7,8 @@ import com.example.player.util.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaView;
@@ -21,6 +23,12 @@ public class MainController implements Initializable {
     private Slider progSlider;
     @FXML
     private Pane mediaLayout;
+    @FXML
+    private ListView list;
+    @FXML
+    private Label playStatus;
+    @FXML
+    private Label progStatus;
 
     //文件打开，关闭
     @FXML
@@ -52,6 +60,12 @@ public class MainController implements Initializable {
         System.out.println("mediaView initialize");
         MediaLayout.setPane(mediaLayout);
         System.out.println("mediaLayout initialize");
+        PlayList.setListView(list);
+        System.out.println("list initialize");
+        StatusController.setProgStatus(progStatus);
+        System.out.println("progStatus initialize");
+        StatusController.setPlayStatus(playStatus);
+        System.out.println("playStatus initialize");
     }
 
     //播放、暂停、停止

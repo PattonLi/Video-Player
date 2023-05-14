@@ -19,6 +19,23 @@ public class FileController {
         FileController.mediaView = mediaView;
     }
 
+    public static void loadVideo(File file){
+        //load
+        String filepath = file.toURI().toString();
+        System.out.println("filepath = " + filepath);
+        //set media view
+        Media media = new Media(filepath);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaView.setMediaPlayer(mediaPlayer);
+        System.out.println("mediaPlayer initialize");
+        Player.setMediaPlayer(mediaPlayer);
+        //bind
+        Volume.bindVolume();
+        ProgSlider.bindProgressBar();
+        MediaLayout.bindSize(mediaView);
+
+    }
+
     public static void openFile() {
         //文件选择器
         AlertInfo.showAlert("你可以选择一个文件!");
@@ -29,18 +46,7 @@ public class FileController {
         if (file == null) {
             AlertInfo.showAlert("你没有选择文件！！");
         } else {
-            String filepath = file.toURI().toString();
-            System.out.println("filepath = " + filepath);
-            //set media view
-            Media media = new Media(filepath);
-            MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaView.setMediaPlayer(mediaPlayer);
-            System.out.println("mediaPlayer initialize");
-            Player.setMediaPlayer(mediaPlayer);
-
-            //bind
-            ProgSlider.bindProgressBar();
-            MediaLayout.bindSize(mediaView);
+            loadVideo(file);
             //设置播放列表
             PlayList.setIndex(0);
             PlayList.setLenOfPlaylist(1);
@@ -63,10 +69,15 @@ public class FileController {
             for (File file : selectedFiles) {
                 System.out.println("Selected file: " + file.getAbsolutePath());
             }
+            //默认第一个视频播放
+            loadVideo(selectedFiles.get(0));
+            //设置播放列表
+            PlayList.setIndex(0);
+            PlayList.setLenOfPlaylist(selectedFiles.size());
+            PlayList.setPlaylist(selectedFiles);
         } else {
             AlertInfo.showAlert("你没有选择文件！");
         }
-        //判断路径是否正确
 
     }
 }
